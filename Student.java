@@ -30,9 +30,23 @@ public class Student {
 
     public double[] getAverageValue() {
         double[] averageGrates = new double[this.grates.length];
+
         for (int i = 0; i < this.grates.length; i++) {
-            String result = String.format("%.1f", this.grates[i]);
-            averageGrates[i] = Double.parseDouble(result);
+            if (this.grates[i] < 2.5) {
+                averageGrates[i] = 2;
+            } else if (this.grates[i] < 3) {
+                averageGrates[i] = 2.5;
+            } else if (this.grates[i] < 3.5) {
+                averageGrates[i] = 3;
+            } else if (this.grates[i] < 4) {
+                averageGrates[i] = 3.5;
+            } else if (this.grates[i] < 4.5) {
+                averageGrates[i] = 4;
+            } else if (this.grates[i] < 5) {
+                averageGrates[i] = 4.5;
+            } else if (this.grates[i] == 5) {
+                averageGrates[i] = 5;
+            }
         }
         return averageGrates;
     }
